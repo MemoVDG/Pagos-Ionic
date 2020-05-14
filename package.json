@@ -30,6 +30,7 @@
     "cordova-android": "8.1.0",
     "cordova-plugin-stripe": "^1.5.3",
     "rxjs": "~6.5.1",
+    "stripe": "^8.52.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
