@@ -9,15 +9,18 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { PayPal } from '@ionic-native/paypal/ngx';
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent],
+	entryComponents: [],
+	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+	providers: [
+		StatusBar,
+		PayPal,
+		SplashScreen,
+		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+	],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,7 @@
 {
   "name": "Pagos",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
