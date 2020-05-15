@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { PayPal } from '@ionic-native/paypal/ngx';
 import { Stripe } from '@ionic-native/stripe/ngx';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 		StatusBar,
 		PayPal,
 		Stripe,
+		HttpClient,
 		SplashScreen,
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 	],

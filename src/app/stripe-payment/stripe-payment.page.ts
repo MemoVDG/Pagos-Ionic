@@ -25,6 +25,27 @@ export class StripePaymentPage implements OnInit {
 
 	ngOnInit() {}
 
+	makePayment(token) {
+		console.log(token);
+		this.http
+			.post(
+				'https://us-central1-health-app-5e5b8.cloudfunctions.net/payWithStripe',
+				{
+					amount: 100,
+					currency: 'usd',
+					token: token,
+				}
+			)
+			.subscribe(
+				(data) => {
+					console.log(data);
+				},
+				(error) => {
+					console.log(error);
+				}
+			);
+	}
+
 	validateCard() {
 		console.log(this.ccNumber, this.ccMonth, this.ccYear, this.ccCVV);
 		// Validate CARD
@@ -75,7 +96,7 @@ export class StripePaymentPage implements OnInit {
 			.createCardToken(this.cardDetails)
 			.then((token) => {
 				console.log(token);
-				// this.makePayment(token.id);
+				this.makePayment(token.id);
 			})
 			.catch((error) => console.error(error));
 	}
